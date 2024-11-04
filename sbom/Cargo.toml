@@ -1,0 +1,16 @@
+[package]
+name = "sbom-license-scanner-sbom"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sbom-license-scanner-spdx = { version =  "0.1.0" , path="../license/spdx" }
+sbom-license-scanner-fedora = { version =  "0.1.0" , path="../license/fedora" }
+walker-common= "0.9.3"
+cyclonedx-bom = { version = "0.7.0"}
+spdx-rs = { version = "0.5.4" }
+sea-orm = { version = "1.1.0", features = [ "sqlx-sqlite", "runtime-tokio-native-tls", "macros" ] }
+sbom-walker = { version = "0.9.3", features = ["cyclonedx-bom","spdx-rs"] }
+thiserror = "1.0.65"
